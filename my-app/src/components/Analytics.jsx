@@ -32,9 +32,9 @@ const Analytics = () => {
     
   return (
     <div className='flex  flex-col lg:flex-row items-center Justify-center w-[100%] '>
-      <div className="left flex flex-col items-center justify-center gap-4 w-[60%] ">
+      <div className="left flex flex-col items-center justify-center gap-4 w-[100%] lg:w-[60%] ">
         <div className="update flex items-center justify-center p-6 border gap-8 rounded-[10px] w-[90%]">
-            <div className="logo w-14">
+            <div className="logo w-32 lg:w-14">
                 <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="" />
             </div>
             <div className="text">
@@ -49,42 +49,42 @@ const Analytics = () => {
         </div>
         <div className="stat flex flex-col items-left p-6 border gap-4 rounded-[10px] w-[90%]">
             <h1 className='font-bold'>Quick Statistics</h1>
-            <div className="details flex items-center justify-center gap-4">
+            <div className="details flex items-center justify-center lg:gap-4">
                 <div className="rank flex items-center justify-center gap-2 p-2">
-                    <div className="logo w-[70px] p-2 border rounded-[50%]">
+                    <div className="logo w-[75px] md:w-[60px] p-2 border rounded-[50%]">
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730025320/trophy_htswn4.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
                         <div className="point font-bold">
                             {rank}
                         </div>
-                        <div className="text">
+                        <div className="text-[10px] lg:text-[15px]">
                             YOUR RANK
                         </div>
                     </div>
                 </div>
                 <div className="percentile flex items-center justify-center gap-2 border-l-[2px] p-2">
-                    <div className="logo w-[70px] p-2 border rounded-[50%]">
+                    <div className="logo w-[60px] p-2 border rounded-[50%]">
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730026025/pencil_kvnyyw.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
                         <div className="point font-bold">
                             {percentile}
                         </div>
-                        <div className="text">
+                        <div className="text-[10px] lg:text-[15px]">
                             PERCENTILE
                         </div>
                     </div>
                 </div>
                 <div className="score flex items-center justify-center gap-2 border-l-[2px] p-2">
-                    <div className="logo w-[70px] p-2 border rounded-[50%]">
+                    <div className="logo w-[60px] p-2 border rounded-[50%]">
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730026025/check-mark_qqzz4g.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
                         <div className="point font-bold">
                             {score}/15
                         </div>
-                        <div className="text">
+                        <div className="text-[10px] lg:text-[15px]">
                             SCORE
                         </div>
                     </div>
@@ -120,13 +120,12 @@ const Analytics = () => {
                     },
                     
                 ]}
-                width={500}
-                height={300}
+                className='lg:w-[500px] lg:h-[300px]'
             />
             </div>
         </div>
       </div>
-      <div className="right flex flex-col  m-auto mt-0 gap-6 w-[40%] pr-4 pb-4 pl-4">
+      <div className="right flex flex-col  m-auto mt-4 lg:mt-0 gap-6 lg:w-[40%] w-[100%] pr-4 pb-4 pl-4">
             <div className="bar border rounded-[10px] w-[100%] p-8">
             <div className='flex flex-col items-left gap-8'>
                 <p className='font-bold text-[20px]'>Syllabus Wise Analytics</p>

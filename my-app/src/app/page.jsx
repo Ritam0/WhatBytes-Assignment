@@ -7,7 +7,7 @@ export default function Home() {
     <div className="top-0 overflow-x-hidden">
       <Navbar />
       <div className="mid flex flex-col lg:flex-row w-full border max-h-[100%]">
-        <div className="left w-[15%] lg-w-[15%]">
+        <div className="left w-[100%] lg:w-[15%]">
           <Sidenav/>
         </div>
         <div className="right flex flex-col gap-4 pl-8 w-[100%]">
