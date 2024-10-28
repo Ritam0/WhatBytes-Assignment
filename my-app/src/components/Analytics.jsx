@@ -55,10 +55,10 @@ const Analytics = () => {
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730025320/trophy_htswn4.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
-                        <div className="point font-bold text-[15px]">
+                        <div className="point font-bold text-[20px]">
                             {rank}
                         </div>
-                        <div className="text-[15px] lg:text-[15px]">
+                        <div className="text-[15px] lg:text-[10px]">
                             YOUR RANK
                         </div>
                     </div>
@@ -68,10 +68,10 @@ const Analytics = () => {
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730026025/pencil_kvnyyw.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
-                        <div className="point font-bold text-[15px]">
-                            {percentile}
+                        <div className="point font-bold text-[20px]">
+                            {percentile}%
                         </div>
-                        <div className="text-[15px] lg:text-[15px]">
+                        <div className="text-[15px] lg:text-[10px]">
                             PERCENTILE
                         </div>
                     </div>
@@ -81,10 +81,10 @@ const Analytics = () => {
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730026025/check-mark_qqzz4g.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
-                        <div className="point font-bold text-[15px]">
+                        <div className="point font-bold text-[20px]">
                             {score}/15
                         </div>
-                        <div className="text-[15px] lg:text-[15px]">
+                        <div className="text-[15px] lg:text-[10px]">
                             SCORE
                         </div>
                     </div>
@@ -93,14 +93,14 @@ const Analytics = () => {
 
         </div>
         <div className="graph flex flex-col items-center justify-center p-6 border gap-8 rounded-[10px] w-[90%]">
-            <div className="up flex gap-16 w-[100%]">
-                <div className="left">
+            <div className="up flex gap-16 w-[100%] ">
+                <div className="left w-[85%]">
                     <p>Comparison Graph</p>
                     <p>
-                        You have scored {percentile}% percentile which is lower than 72% average
+                        You have scored {percentile}% percentile and the 72% is average
                     </p>
                 </div>
-                <div className="right m-auto ml-0">
+                <div className="right m-auto ml-0 " >
                 <div className="logo w-[70px] p-2 border rounded-[50%]">
                     <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730026615/line-chart_zuk0jv.png" className='p-2' alt="" />
                 </div>
@@ -127,7 +127,8 @@ const Analytics = () => {
                             ],
                         },
                     ]}
-                    className="w-[400px] h-[300px] lg:w-[500px] lg:h-[300px]"
+                    width={400}
+                    height={300}
                 />
             </div>
         </div>
@@ -181,13 +182,14 @@ const Analytics = () => {
             </div>
             <div className="pie border rounded-[10px] p-4 flex flex-col gap-4 items-center justify-center">
                 <div className="up w-[100%]">
-                    <p className='font-bold text-[20px]'>Question Analytics</p>
+                    <p className='font-bold text-[20px] flex'><span className='w-[85%]'>Question Analytics</span> <span className='text-right text-[#1100ff]'>{score}/15</span></p>
+
                     <br />
                     <p className='font-bold'>You have Scored 12 out of 15.</p>
                     <p className=''>However it still needs some improvements.</p>
                 </div>
                 <div className="down h-[200px] w-[200px]">
-                    <CircularProgressbar value={score} text={`${score}/15`} strokeWidth={20} maxValue={15}/>
+                    <CircularProgressbar value={score} text="🎯" strokeWidth={20} maxValue={15}/>
                 </div>
             </div>
       </div>
