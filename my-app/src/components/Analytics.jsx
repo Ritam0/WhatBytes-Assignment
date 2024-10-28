@@ -25,12 +25,11 @@ const Analytics = () => {
         setRank(r);
         setPercentile(p);
         setScore(s);
-        window.alert("Data Updated Succesfully!")
+        window.alert("Data Updated Succesfully!");
     }
     
-    var arr1=[0,10,20,30,40,50,60,70,80,90,100];
-    var arr2=[null,1,3,6,14,18,16,15,16,18,2];
-    
+    var arr1 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+    var arr2 = [0, 1, 3, 6, 14, 18, 16, 15, 16, 18, 2];
   return (
     <div className='flex  flex-col lg:flex-row items-center Justify-center w-[100%] '>
       <div className="left flex flex-col items-center justify-center gap-4 w-[100%] lg:w-[60%] ">
@@ -98,7 +97,7 @@ const Analytics = () => {
                 <div className="left">
                     <p>Comparison Graph</p>
                     <p>
-                        You have scored 30% percentile which is lower than 72% average
+                        You have scored {percentile}% percentile which is lower than 72% average
                     </p>
                 </div>
                 <div className="right m-auto ml-0">
@@ -108,22 +107,28 @@ const Analytics = () => {
                 
                 </div>
             </div>
-            <div className="down ">
-            <LineChart
-                xAxis={[{ data: arr1 ,label:'Percentile'}]}
-                series={[
-                    {
-                    data: arr2,
-                    label:`Number of Students`,
-                    },{
-                        data:myp,
-                        label:`Your Percentile ${percentile}`
-                    }
-                    
-                ]}
-                
-                className='w-[400px] h-[300px] lg:w-[500px] lg:h-[300px]'
-            />
+            <div className="graph flex flex-col items-center justify-center p-6  gap-8 rounded-[10px] w-[90%]">
+                <LineChart
+                    xAxis={[{ data: arr1, label: 'Percentile' }]}
+                    series={[
+                        {
+                            data: arr2,
+                            label: `Number of Students`,
+                            showMark: true,
+                            tooltip: { content: (point) => (point ? `${point.x}, ${point.y}` : 'No Data') }, // Fallback tooltip content
+                            markers: [
+                              {
+                                x: arr1.findIndex(item => item === percentile),
+                                y: arr2[arr1.findIndex(item => item === percentile)] || 0,
+                                label: `Your Percentile: ${percentile}`,
+                                color: 'red',
+                                size: 8,
+                              },
+                            ],
+                        },
+                    ]}
+                    className="w-[400px] h-[300px] lg:w-[500px] lg:h-[300px]"
+                />
             </div>
         </div>
       </div>
