@@ -201,7 +201,10 @@ const Analytics = () => {
       <div className={`modal_form absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
   w-[95%] lg:w-[50%] h-[50%] bg-white border border-black shadow-lg p-4 ${isOpen?'block':'hidden'} flex flex-col items-left gap-8 rounded-[15px] z-50`}>
         
-        <p className='font-bold pt-8 text-[25px]'>Update Details</p>
+        <div className="det flex  justify-center items-center gap-16">
+        <p className='font-bold pt-2 text-[25px]'>Update Details</p>
+        <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="logo" className='w-16 h-16 p-2'  />
+        </div>
         <div className="form flex   w-[100%] text-[20px]">
             <div className="info flex flex-col  gap-8 w-[70%] items-right">
                 <p className='flex items-right gap-4 w-46 h-8 font-bold'><span className='p-2 text-white flex items-center justify-center bg-[#1100ff] h-8 w-8 border rounded-[50%]'>1</span> Update Your Rank</p>
@@ -210,18 +213,18 @@ const Analytics = () => {
             </div>
             <div className="data flex flex-col  gap-8  w-[30%] items-right">
                 <div className="items">
-                <input type="number" className='flex items-right  w-46 h-8 rounded-[5px]' value={r}
+                <input type="number" className='flex items-right  w-24 lg:w-[200px] h-8 rounded-[5px]' value={r}
           onChange={handleRankChange}/>
           <p className={`${r<1||r>100?'block':'hidden'} text-[#ff0000] text-[15px]`}>Value should be 1-100</p>
                 </div>
                 <div className="items">
-                <input type="number" className='flex items-right w-46 h-8 rounded-[5px]' value={p}
+                <input type="number" className='flex items-right w-24 lg:w-[200px] h-8 rounded-[5px]' value={p}
           onChange={handlePercentileChange}/>
           <p className={`${p<1||p>100?'block':'hidden'} text-[#ff0000] text-[15px]`}>Value should be 1-100</p>
 
                 </div>
                 <div className="items">
-                <input type="number" className='flex items-right w-46 h-8 rounded-[5px]' value={s}
+                <input type="number" className='flex items-right w-24 lg:w-[200px] h-8 rounded-[5px]' value={s}
           onChange={handleScoreChange}/>
           <p className={`${s<0||s>15?'block':'hidden'} text-[#ff0000] text-[15px]`}>Value should be 0-15</p>
                 </div>
