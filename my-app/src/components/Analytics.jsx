@@ -107,7 +107,7 @@ const Analytics = () => {
                 
                 </div>
             </div>
-            <div className="down">
+            <div className="down ">
             <LineChart
                 xAxis={[{ data: arr1 ,label:'Percentile'}]}
                 series={[
@@ -120,7 +120,8 @@ const Analytics = () => {
                     },
                     
                 ]}
-                className='w-96 h-96 lg:w-[500px] lg:h-[300px]'
+                
+                className='w-[400px] h-[300px] lg:w-[500px] lg:h-[300px]'
             />
             </div>
         </div>
@@ -185,17 +186,21 @@ const Analytics = () => {
             </div>
       </div>
 
+      {isOpen && (
+  <div className="fixed inset-0 bg-black opacity-50 z-40"></div>
+)}
+
       <div className={`modal_form absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-  w-[50%] h-[50%] bg-white border border-black shadow-lg p-4 ${isOpen?'block':'hidden'} flex flex-col items-left gap-8 rounded-[15px]`}>
+  w-[95%] lg:w-[50%] h-[50%] bg-white border border-black shadow-lg p-4 ${isOpen?'block':'hidden'} flex flex-col items-left gap-8 rounded-[15px] z-50`}>
         
         <p className='font-bold pt-8 text-[25px]'>Update Details</p>
         <div className="form flex   w-[100%] text-[20px]">
-            <div className="info flex flex-col  gap-8 w-[50%] items-right">
+            <div className="info flex flex-col  gap-8 w-[70%] items-right">
                 <p className='flex items-right  w-46 h-8 font-bold'>Update Your Rank</p>
                 <p className='flex items-right  w-46 h-8 font-bold'>Update Your Percentile</p>
                 <p className='flex items-right  w-46 h-8 font-bold'> Update Your Score</p>
             </div>
-            <div className="data flex flex-col  gap-8  w-[50%] items-right">
+            <div className="data flex flex-col  gap-8  w-[30%] items-right">
             <input type="number" className='flex items-right  w-46 h-8 rounded-[5px]' value={r}
           onChange={handleRankChange}/>
             <input type="number" className='flex items-right w-46 h-8 rounded-[5px]' value={p}
