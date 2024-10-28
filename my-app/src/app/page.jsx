@@ -10,7 +10,7 @@ export default function Home() {
         <div className="left w-[100%] lg:w-[15%]">
           <Sidenav/>
         </div>
-        <div className="right flex flex-col gap-4 pl-8 w-[100%]">
+        <div className="right flex flex-col gap-4 p-2 lg:pl-8 w-[100%]">
           <h1 className="p-4 text-[30px] font-bold">Skill Test</h1>
           <Analytics/>
         </div>

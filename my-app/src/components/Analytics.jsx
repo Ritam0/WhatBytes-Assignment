@@ -204,22 +204,35 @@ const Analytics = () => {
         <p className='font-bold pt-8 text-[25px]'>Update Details</p>
         <div className="form flex   w-[100%] text-[20px]">
             <div className="info flex flex-col  gap-8 w-[70%] items-right">
-                <p className='flex items-right  w-46 h-8 font-bold'>Update Your Rank</p>
-                <p className='flex items-right  w-46 h-8 font-bold'>Update Your Percentile</p>
-                <p className='flex items-right  w-46 h-8 font-bold'> Update Your Score</p>
+                <p className='flex items-right gap-4 w-46 h-8 font-bold'><span className='p-2 text-white flex items-center justify-center bg-[#1100ff] h-8 w-8 border rounded-[50%]'>1</span> Update Your Rank</p>
+                <p className='flex items-right gap-4 w-46 h-8 font-bold'><span className='p-2 text-white flex items-center justify-center bg-[#1100ff] h-8 w-8 border rounded-[50%]'>2</span> Update Your Percentile</p>
+                <p className='flex items-right gap-4 w-46 h-8 font-bold'><span className='p-2 text-white flex items-center justify-center bg-[#1100ff] h-8 w-8 border rounded-[50%]'>3</span> Update Your Score</p>
             </div>
             <div className="data flex flex-col  gap-8  w-[30%] items-right">
-            <input type="number" className='flex items-right  w-46 h-8 rounded-[5px]' value={r}
+                <div className="items">
+                <input type="number" className='flex items-right  w-46 h-8 rounded-[5px]' value={r}
           onChange={handleRankChange}/>
-            <input type="number" className='flex items-right w-46 h-8 rounded-[5px]' value={p}
+          <p className={`${r<1||r>100?'block':'hidden'} text-[#ff0000] text-[15px]`}>Value should be 1-100</p>
+                </div>
+                <div className="items">
+                <input type="number" className='flex items-right w-46 h-8 rounded-[5px]' value={p}
           onChange={handlePercentileChange}/>
-            <input type="number" className='flex items-right w-46 h-8 rounded-[5px]' value={s}
+          <p className={`${p<1||p>100?'block':'hidden'} text-[#ff0000] text-[15px]`}>Value should be 1-100</p>
+
+                </div>
+                <div className="items">
+                <input type="number" className='flex items-right w-46 h-8 rounded-[5px]' value={s}
           onChange={handleScoreChange}/>
+          <p className={`${s<0||s>15?'block':'hidden'} text-[#ff0000] text-[15px]`}>Value should be 0-15</p>
+                </div>
+            
+            
+            
             </div>
             
         </div>
         <div className="buttons flex gap-6 items-center justify-center h-[20%] m-auto mb-0">
-        <button onClick={ChangeModal} className='bg-[#e40a0a] text-white hover:bg-white hover:text-black  w-[80px] h-[40px] p-2 rounded-[5px] border'>Cancel</button>
+        <button onClick={ChangeModal} className='bg-[#e40a0a] text-white hover:bg-white hover:text-black  w-[80px] h-[40px] p-2 rounded-[5px] border'>Close</button>
         <button onClick={()=>ChangeData(r,p,s)} className='bg-[#390ae4] text-white hover:bg-white hover:text-black w-[80px] h-[40px] p-2 rounded-[5px]  border'>Save ➡</button>
         </div>
         
