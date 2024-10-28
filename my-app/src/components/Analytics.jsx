@@ -13,6 +13,7 @@ const Analytics = () => {
     const [r,setR]=useState(rank);
     const [p,setP]=useState(percentile);
     const [s,setS]=useState(score);
+    const [myp,setMyp]=useState([null,null,null,null,null,null,null,null,1,null])
 
     const handleRankChange = (e) => setR(e.target.value);
     const handlePercentileChange = (e) => setP(e.target.value);
@@ -113,11 +114,11 @@ const Analytics = () => {
                 series={[
                     {
                     data: arr2,
-                    label:'Number of Students',
-                    highlightScope: {
-                        highlight: 60,
-                      },
-                    },
+                    label:`Number of Students`,
+                    },{
+                        data:myp,
+                        label:`Your Percentile ${percentile}`
+                    }
                     
                 ]}
                 
