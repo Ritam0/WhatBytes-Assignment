@@ -33,7 +33,7 @@ const Analytics = () => {
   return (
     <div className='flex  flex-col lg:flex-row items-center Justify-center w-[100%] '>
       <div className="left flex flex-col items-center justify-center gap-4 w-[100%] lg:w-[60%] ">
-        <div className="update flex items-center justify-center p-6 border gap-8 rounded-[10px] w-[90%]">
+        <div className="update flex flex-wrap items-center justify-center p-6 border gap-8 rounded-[10px] w-[90%]">
             <div className="logo w-32 lg:w-14">
                 <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="" />
             </div>
@@ -49,42 +49,42 @@ const Analytics = () => {
         </div>
         <div className="stat flex flex-col items-left p-6 border gap-4 rounded-[10px] w-[90%]">
             <h1 className='font-bold'>Quick Statistics</h1>
-            <div className="details flex items-center justify-center lg:gap-4">
-                <div className="rank flex items-center justify-center gap-2 p-2">
-                    <div className="logo w-[75px] md:w-[60px] p-2 border rounded-[50%]">
+            <div className="details flex flex-col lg:flex-row items-left justify-center gap-4">
+                <div className="rank flex items-center justify-left gap-2 p-2  border">
+                    <div className="logo w-[60px] p-2 border rounded-[50%]">
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730025320/trophy_htswn4.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
-                        <div className="point font-bold">
+                        <div className="point font-bold text-[15px]">
                             {rank}
                         </div>
-                        <div className="text-[10px] lg:text-[15px]">
+                        <div className="text-[15px] lg:text-[15px]">
                             YOUR RANK
                         </div>
                     </div>
                 </div>
-                <div className="percentile flex items-center justify-center gap-2 border-l-[2px] p-2">
+                <div className="percentile flex items-center justify-left gap-2 lg:border-l-[2px] p-2 border">
                     <div className="logo w-[60px] p-2 border rounded-[50%]">
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730026025/pencil_kvnyyw.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
-                        <div className="point font-bold">
+                        <div className="point font-bold text-[15px]">
                             {percentile}
                         </div>
-                        <div className="text-[10px] lg:text-[15px]">
+                        <div className="text-[15px] lg:text-[15px]">
                             PERCENTILE
                         </div>
                     </div>
                 </div>
-                <div className="score flex items-center justify-center gap-2 border-l-[2px] p-2">
+                <div className="score flex items-center justify-left gap-2 lg:border-l-[2px] p-2 border">
                     <div className="logo w-[60px] p-2 border rounded-[50%]">
                         <img src="https://res.cloudinary.com/djyxyaqno/image/upload/v1730026025/check-mark_qqzz4g.png" className='p-2' alt="" />
                     </div>
                     <div className="score">
-                        <div className="point font-bold">
+                        <div className="point font-bold text-[15px]">
                             {score}/15
                         </div>
-                        <div className="text-[10px] lg:text-[15px]">
+                        <div className="text-[15px] lg:text-[15px]">
                             SCORE
                         </div>
                     </div>
@@ -120,7 +120,7 @@ const Analytics = () => {
                     },
                     
                 ]}
-                className='lg:w-[500px] lg:h-[300px]'
+                className='w-[300px] h-[200px] lg:w-[500px] lg:h-[300px]'
             />
             </div>
         </div>
